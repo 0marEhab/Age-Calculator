@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Info from "./components/Info";
 import SocialMedia from "./components/SocialMedia";
+import { ToastContainer, toast } from "react-toastify";
 export default function App() {
   return (
     <div className=" bg-[#F0F2F5]  ">
@@ -17,6 +18,7 @@ export default function App() {
         <AgeBanner />
       </div>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }
