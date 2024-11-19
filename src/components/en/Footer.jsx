@@ -4,16 +4,14 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <div>
-      <div
-        dir="rtl"
-        className="flex text-black font-bold p-5 justify-center items-center gap-5"
-      >
-        <Link to="/">الرئيسيه</Link>
-        <Link to="/contactUs">من نحن</Link>
-        <Link to="/callUs">تواصل معنا</Link>
+      <div className="flex text-black font-bold p-5 justify-center items-center gap-5">
+        <Link to={"/en"}>main page</Link>
+        <Link to={"/en/callUs"}>who are we</Link>
+        <Link to={"/en/contactUs"}>Contact Us</Link>
       </div>
       <div className="bg-[#0370A3] flex flex-col gap-5 justify-center text-white p-5 items-center">
         <p>جميع الحقوق محفوظة © حاسبة العمر 2024</p>

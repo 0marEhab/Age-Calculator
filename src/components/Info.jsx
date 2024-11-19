@@ -3,12 +3,12 @@ import { SlCalender } from "react-icons/sl";
 import { FaBabyCarriage } from "react-icons/fa";
 export default function Info() {
   return (
-    <div className=" mt-10 bg-gray-100 flex items-end justify-center">
+    <div className=" mt-10 bg-gray-100 font-os flex items-end justify-center">
       <div className="bg-white p-6 rounded-lg shadow-lg">
-        <h1 className="text-2xl bg-gray-100 p-4 border-r-2 border-[#0370A3] font-bold text-black text-end mb-4">
-          ميلاد
+        <h1 className="text-2xl bg-gray-100 p-4 border-r-2 font-os font-semibold border-[#0370A3]  text-[#212529] text-end mb-4">
+          حاسبه العمر
         </h1>
-        <p className=" bg-blue-200 text-blue-900 font-bold rounded-md border-2 p-4 text-end border-[#0370A3]  mb-4">
+        <p className=" bg-blue-200 text-blue-900  rounded-md border-2 p-4 text-end border-[#0370A3]  mb-4">
           نعدك بتقديم معلومات جديدة ومثيرة عن تاريخ ميلادك لم تكن تعرفها من قبل
         </p>
         <div className="flex items-center gap-5 mb-4 justify-end">

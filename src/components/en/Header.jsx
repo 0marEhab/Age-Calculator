@@ -10,12 +10,12 @@ export default function Header({ content, toggleSidebar }) {
             <button onClick={toggleSidebar}>
               <GiHamburgerMenu />
             </button>
-            <Link to={"/en"}>AR</Link>
+            <Link to={"/"}>EN</Link>
           </div>
           <div>
-            حساب العمر {content && "  بالسنه "} {content}
+            Calulate age {content && "in"} {content}
           </div>
-          <div>حاسبه العمر</div>
+          <div>age calculator</div>
         </div>
       </div>
     </header>

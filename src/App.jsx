@@ -1,24 +1,56 @@
-import About from "./components/About";
-import AgeBanner from "./components/AgeBanner";
-import Calculator from "./components/Calculator";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Info from "./components/Info";
-import SocialMedia from "./components/SocialMedia";
-import { ToastContainer, toast } from "react-toastify";
+import Ar from "./components/Ar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Hijri from "./components/hijri/Hijri";
+import Melady from "./components/melady/Melady";
+import En from "./components/en/En";
+import HijriEn from "./components/en/hijri/HijriEn";
+import MeladyEn from "./components/en/melady/MeladyEn";
+import ContactUs from "./components/ContactUs";
+import CallUs from "./components/CallUs";
+import ContactUsEn from "./components/en/ContactUsEn";
+import CallUsEn from "./components/en/CallUsEn";
 export default function App() {
-  return (
-    <div className=" bg-[#F0F2F5]  ">
-      <Header />
-      <div className=" justify-center mx-auto w-[400px]   md:w-[1220px] mt-10  text-white">
-        <About />
-        <Calculator />
-        <SocialMedia />
-        <Info />
-        <AgeBanner />
-      </div>
-      <Footer />
-      <ToastContainer />
-    </div>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Ar />,
+    },
+    {
+      path: "/hijri",
+      element: <Hijri />,
+    },
+    {
+      path: "/contactUs",
+      element: <ContactUs />,
+    },
+    {
+      path: "/callUs",
+      element: <CallUs />,
+    },
+    {
+      path: "/gregorian",
+      element: <Melady />,
+    },
+    {
+      path: "/en",
+      element: <En />,
+    },
+    {
+      path: "/en/hijri",
+      element: <HijriEn />,
+    },
+    {
+      path: "/en/gregorian",
+      element: <MeladyEn />,
+    },
+    {
+      path: "/en/contactUs",
+      element: <ContactUsEn />,
+    },
+    {
+      path: "/en/callUs",
+      element: <CallUsEn />,
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }

@@ -6,7 +6,7 @@ import { FaFacebookF } from "react-icons/fa";
 export default function SocialMedia() {
   return (
     <div className="flex font-os mt-10 text-[#212529] gap-5 flex-col justify-center  items-center bg-white p-6">
-      <p className=" ">شارك الموقع على شبكات التواصل الاجتماعي</p>
+      <p className=" ">share the website on Social Media</p>
       <div className="flex gap-5  justify-center">
         <a href="#" className=" px-3 py-3  rounded-md bg-[#F0F2F5] ">
           <RiWhatsappFill size={30} className="text-green-500" />
