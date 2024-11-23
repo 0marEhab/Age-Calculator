@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./Header";
 import About from "./About";
 import Calculator from "./Calculator";
@@ -9,21 +9,20 @@ import AgeBanner from "./AgeBanner";
 import SideBar from "./SideBar";
 
 export default function Ar() {
-  const [content, setContent] = useState("الميلادية");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
   };
 
-  const toggle = (t) => {
-    setContent(t);
-  };
-
+  // Scroll to the top of the page when the location changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="bg-[#F0F2F5]">
       {/* Header */}
-      <Header content={content} toggleSidebar={toggleSidebar} />
+      <Header toggleSidebar={toggleSidebar} />
 
       {/* Sidebar */}
       <SideBar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />

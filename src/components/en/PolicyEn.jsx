@@ -1,6 +1,6 @@
 import React from "react";
 import ContactAbout from "./ContactAbout";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import { ToastContainer, toast } from "react-toastify";
@@ -11,16 +11,19 @@ export default function PolicyEN() {
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className=" bg-[#F0F2F5]  ">
       <Header toggleSidebar={toggleSidebar} />
       <SideBar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div className=" font-os font-normal justify-center mx-auto w-[400px]   md:w-[1220px] mt-10  text-white">
-        <ContactAbout title={"privacy policy"} />
+        <ContactAbout title={"Privacy Policy"} />
         <div className="bg-white p-10 mt-10 rounded-lg flex flex-col gap-4 text-black font-os">
           <p>
             At{" "}
-            <Link to={"/"} className="text-[#0370A3]">
+            <Link to={"/en"} className="text-[#0370A3]">
               Age Calculator
             </Link>
             , we value the privacy of our visitors and work hard to protect

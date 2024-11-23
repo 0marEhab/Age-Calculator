@@ -9,12 +9,22 @@ export default function AgeBanner() {
           حاسبات العمر
         </h2>
         <div className="space-y-4">
-          <button className="w-full shadow-lg border-t-2 hover:border-[#0370A3] text-right px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 transition">
+          <button
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+            className="w-full shadow-lg border-t-2 hover:border-[#0370A3] text-right px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 transition"
+          >
             <Link to={"/"} className="w-full flex justify-end">
               حساب العمر بالميلادى و الهجري
             </Link>
           </button>
-          <button className="w-full shadow-lg border-t-2 hover:border-[#0370A3] text-right px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 transition">
+          <button
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+            className="w-full shadow-lg border-t-2 hover:border-[#0370A3] text-right px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 transition"
+          >
             <Link to={"/"} className="w-full flex justify-end">
               احسب عمرك بدقه
             </Link>

@@ -10,7 +10,7 @@ export default function Header({ content, toggleSidebar }) {
             <button onClick={toggleSidebar}>
               {<GiHamburgerMenu /> || sidebar}
             </button>
-            <Link to={"/en"}>AR</Link>
+            <Link to={"/en"}>EN</Link>
           </div>
 
           <div>

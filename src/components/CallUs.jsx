@@ -1,25 +1,21 @@
-import { useState } from "react";
-import About from "./About";
-import AgeBanner from "./AgeBanner";
-
+import { useState, useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
-import Info from "./Info";
-
 import { ToastContainer, toast } from "react-toastify";
 import ContactAbout from "./ContactAbout";
 import SideBar from "./SideBar";
 import { Link } from "react-router-dom";
 export default function CallUs() {
-  const [content, setContent] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
   };
-  const toggle = (t) => {
-    setContent(t);
-  };
+
+  // Scroll to the top of the page when the location changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className=" bg-[#F0F2F5]  ">
       <Header toggleSidebar={toggleSidebar} />
@@ -38,19 +34,19 @@ export default function CallUs() {
             </Link>{" "}
             نحرص دائمًا على تقديم أفضل تجربة للمستخدمين. إذا كان لديك أي
             استفسارات أو تحتاج إلى دعم، يمكنك الاتصال بنا بسهولة عبر البريد
-            الإلكتروني التالي:
+            الإلكتروني التالي
           </p>
           <p>info@agecalculator.app </p>
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow-lg">
           <h1 className="text-2xl bg-gray-100 p-4 border-r-2 font-os font-semibold border-[#0370A3]  text-[#212529] text-end mb-4">
-            يسعدنا التواصل معك للحصول على دعم أو تقديم أي من الخدمات التالية:
+            يسعدنا التواصل معك للحصول على دعم أو تقديم أي من الخدمات التالية
           </h1>
 
           <div className="flex flex-col text-gray-700  gap-5 mb-4 ">
             <p className="text-gray-700 p-10">
-              <ul style={{ listStyleType: "disc" }} dir="rtl" >
+              <ul style={{ listStyleType: "disc" }} dir="rtl">
                 <li>
                   الاستفسارات العامة: إذا كان لديك أي أسئلة حول كيفية استخدام
                   الموقع أو حساب العمر
@@ -64,10 +60,10 @@ export default function CallUs() {
                   التعاون معنا في مساحات إعلانية أو نشر مقالات ترويجية.
                 </li>
               </ul>
-            <p dir="rtl" className="mt-3">
-              {" "}
-              نحن هنا لمساعدتك في أي وقت، فلا تتردد في التواصل معنا!
-            </p>
+              <p dir="rtl" className="mt-3">
+                {" "}
+                نحن هنا لمساعدتك في أي وقت، فلا تتردد في التواصل معنا!
+              </p>
             </p>
           </div>
         </div>

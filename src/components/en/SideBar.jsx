@@ -23,15 +23,27 @@ export default function SideBar({ isSidebarOpen, toggleSidebar }) {
         </button>
         <ul className="mt-10 w-full flex flex-col gap-1 space-y-4 font-os">
           <Link to={"/en"}>
-            <li className="text-black bg-gray-100 w-full p-2 ">Main Page</li>
+            <li className="text-black bg-gray-100 w-full p-2 ">Home Page</li>
           </Link>
           <Link to={"/en/contact-us"}>
             {" "}
-            <li className="text-black bg-gray-100 w-full p-3">contact Us </li>
+            <li className="text-black bg-gray-100 w-full p-3">Contact Us </li>
           </Link>
           <Link to={"/en/about-us"}>
             {" "}
             <li className="text-black bg-gray-100 w-full p-3">About Us</li>
+          </Link>
+          <Link to={"/en/terms-and-conditions"}>
+            {" "}
+            <li className="text-black bg-gray-100 w-full p-3">
+              Terms and Conditions
+            </li>
+          </Link>
+          <Link to={"/en/policy"}>
+            {" "}
+            <li className="text-black bg-gray-100 w-full p-3">
+              Privacy Policy
+            </li>
           </Link>
         </ul>
       </div>

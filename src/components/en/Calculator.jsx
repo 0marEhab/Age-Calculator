@@ -426,15 +426,12 @@ export default function Calculator() {
         )}
         {ageData && (
           <div className="mt-10 flex flex-col justify-center items-center md:justify-end md:items-end">
-            <h1 className="text-2xl w-full bg-gray-100 p-4 border-r-2 border-[#0370A3] font-bold text-black text-end mb-4">
+            <h1 className="text-2xl w-full bg-gray-100 p-4 border-l-2 border-[#0370A3] font-bold text-black  mb-4">
               More facts about your life
             </h1>
             <div className="p-2 flex-col md:w-full flex justify-center items-center rounded-lg">
               <div>
-                <p
-                  dir="rtl"
-                  className="bg-blue-200 text-blue-900 rounded-md border-2 p-4 border-[#0370A3] mb-4"
-                >
+                <p className="bg-blue-200 text-blue-900 rounded-md border-2 p-4 border-[#0370A3] mb-4">
                   Note: The facts are calculated based on the average daily
                   rates of general activities for a healthy human body. We use
                   standard percentages and multiply these rates by the number of

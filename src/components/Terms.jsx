@@ -1,6 +1,6 @@
 import React from "react";
 import ContactAbout from "./ContactAbout";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import { ToastContainer, toast } from "react-toastify";
@@ -11,6 +11,12 @@ export default function Terms() {
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
   };
+  // Get the current location
+
+  // Scroll to the top of the page when the location changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className=" bg-[#F0F2F5]  ">
       <Header toggleSidebar={toggleSidebar} />

@@ -1,6 +1,6 @@
 import React from "react";
 import ContactAbout from "./ContactAbout";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import { ToastContainer, toast } from "react-toastify";
@@ -11,6 +11,9 @@ export default function TermsEn() {
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className=" bg-[#F0F2F5]  ">
       <Header toggleSidebar={toggleSidebar} />
@@ -20,7 +23,7 @@ export default function TermsEn() {
         <div className="bg-white p-10 mt-10 rounded-lg flex flex-col gap-4 text-black font-os">
           <p>
             Welcome to{" "}
-            <Link to={"/"} className="text-[#0370A3]">
+            <Link to={"/en"} className="text-[#0370A3]">
               Age Calculator
             </Link>
             . By using this website, you agree to comply with the terms and

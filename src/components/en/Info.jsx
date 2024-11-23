@@ -14,7 +14,7 @@ export default function Info() {
         <div className="flex items-center gap-5 mb-4 justify-end">
           <p className="text-gray-700 ">
             The{" "}
-            <Link to={"/"} className="text-[#0370A3]">
+            <Link to={"/en"} className="text-[#0370A3]">
               Age Calculator{" "}
             </Link>{" "}
             provides accurate age calculations based on either the Gregorian or
@@ -61,7 +61,7 @@ export default function Info() {
           <div className="flex items-center gap-5 mb-4 justify-end">
             <p className="text-gray-700 ">
               The{" "}
-              <Link to={"/"} className="text-[#0370A3]">
+              <Link to={"/en"} className="text-[#0370A3]">
                 {" "}
                 Gregorian age calculator{" "}
               </Link>
@@ -82,7 +82,7 @@ export default function Info() {
           <div className="flex items-center gap-5 mb-4 justify-end">
             <p className="text-gray-700 ">
               When{" "}
-              <Link to={"/"} className="text-[#0370A3]">
+              <Link to={"/en"} className="text-[#0370A3]">
                 {" "}
                 calculating age in the Hijri{" "}
               </Link>
@@ -143,7 +143,7 @@ export default function Info() {
               Sometimes, people need to convert their age between the Gregorian
               and Hijri calendars for personal or legal purposes. With the Age
               Calculator, you can easily{" "}
-              <Link to={"/"} className="text-[#0370A3]">
+              <Link to={"/en"} className="text-[#0370A3]">
                 convert your age
               </Link>{" "}
               from Gregorian to Hijri or vice versa.

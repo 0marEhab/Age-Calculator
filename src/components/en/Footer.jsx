@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <div>
       <div className="flex text-black font-bold p-5 justify-center items-center gap-5">
-        <Link to="/en/policy">privacy policy</Link>
+        <Link to="/en/policy">Privacy Policy</Link>
         <Link to="/en/terms-and-conditions">Terms and Conditions</Link>
         <Link to={"/en/contact-us"}>Contact Us</Link>
         <Link to={"/en/about-us"}>About Us</Link>

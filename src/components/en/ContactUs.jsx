@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import { ToastContainer, toast } from "react-toastify";
@@ -10,6 +10,9 @@ export default function ContactUs() {
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className=" bg-[#F0F2F5]  ">
       <Header toggleSidebar={toggleSidebar} />

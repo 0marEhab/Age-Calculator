@@ -36,6 +36,18 @@ export default function SideBar({ isSidebarOpen, toggleSidebar }) {
             {" "}
             <li className="text-black bg-gray-100 w-full p-3">تواصل معنا</li>
           </Link>
+          <Link to={"/terms-and-conditions"}>
+            {" "}
+            <li className="text-black bg-gray-100 w-full p-3">
+              اتفاقية الاستخدام
+            </li>
+          </Link>
+          <Link to={"/policy"}>
+            {" "}
+            <li className="text-black bg-gray-100 w-full p-3">
+              سياسة الخصوصية
+            </li>
+          </Link>
         </ul>
       </div>
     </>

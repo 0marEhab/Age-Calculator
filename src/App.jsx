@@ -12,6 +12,7 @@ import Policy from "./components/Policy";
 import Terms from "./components/Terms";
 import AboutUsEn from "./components/en/AboutUsEn";
 import PolicyEN from "./components/en/PolicyEn";
+import TermsEn from "./components/en/TermsEn";
 export default function App() {
   const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ export default function App() {
     {
       path: "/terms-and-conditions",
       element: <Terms />,
+    },
+    {
+      path: "/en/terms-and-conditions",
+      element: <TermsEn />,
     },
     {
       path: "/about-us",
@@ -56,7 +61,6 @@ export default function App() {
   return (
     <>
       <RouterProvider router={router} />
-      {/* ToastContainer must be included once */}
       <ToastContainer />
     </>
   );

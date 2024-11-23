@@ -14,7 +14,7 @@ export default function Footer() {
         <Link to="/policy">سياسة الخصوصية</Link>
         <Link to="/terms-and-conditions">اتفاقية الاستخدام</Link>
         <Link to="/about-us">من نحن</Link>
-        <Link to="/contact-us">تواصل معنا</Link>
+        <Link to="/contact-us"> اتصل بنا</Link>
       </div>
       <div className="bg-[#0370A3] flex flex-col gap-5 justify-center text-white p-5 items-center">
         <p>جميع الحقوق محفوظة © حاسبة العمر 2024</p>

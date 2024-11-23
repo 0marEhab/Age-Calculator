@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import About from "./About";
 import AgeBanner from "./AgeBanner";
 import Calculator from "./Calculator";
@@ -18,6 +18,9 @@ export default function En() {
   const toggle = (t) => {
     setContent(t);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className=" bg-[#F0F2F5]  ">
       <Header content={content} toggleSidebar={toggleSidebar} />
