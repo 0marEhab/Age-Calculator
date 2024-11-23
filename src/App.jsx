@@ -2,7 +2,8 @@ import Ar from "./components/Ar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import En from "./components/en/En";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import ContactUs from "./components/ContactUs";
 import CallUs from "./components/CallUs";
 import ContactUsEn from "./components/en/AboutUsEn";
@@ -52,5 +53,11 @@ export default function App() {
       element: <CallUsEn />,
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      {/* ToastContainer must be included once */}
+      <ToastContainer />
+    </>
+  );
 }
