@@ -5,10 +5,12 @@ import En from "./components/en/En";
 
 import ContactUs from "./components/ContactUs";
 import CallUs from "./components/CallUs";
-import ContactUsEn from "./components/en/ContactUsEn";
+import ContactUsEn from "./components/en/AboutUsEn";
 import CallUsEn from "./components/en/CallUsEn";
 import Policy from "./components/Policy";
 import Terms from "./components/Terms";
+import AboutUsEn from "./components/en/AboutUsEn";
+import PolicyEN from "./components/en/PolicyEn";
 export default function App() {
   const router = createBrowserRouter([
     {
@@ -24,11 +26,11 @@ export default function App() {
       element: <Terms />,
     },
     {
-      path: "/contact-us",
+      path: "/about-us",
       element: <ContactUs />,
     },
     {
-      path: "/call-us",
+      path: "/contact-us",
       element: <CallUs />,
     },
 
@@ -38,11 +40,15 @@ export default function App() {
     },
 
     {
-      path: "/en/contactUs",
-      element: <ContactUsEn />,
+      path: "/en/about-us",
+      element: <AboutUsEn />,
     },
     {
-      path: "/en/callUs",
+      path: "/en/policy",
+      element: <PolicyEN />,
+    },
+    {
+      path: "/en/contact-us",
       element: <CallUsEn />,
     },
   ]);

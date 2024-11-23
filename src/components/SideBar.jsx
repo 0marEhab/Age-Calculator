@@ -28,11 +28,11 @@ export default function SideBar({ isSidebarOpen, toggleSidebar }) {
           <Link to={"/"}>
             <li className="text-black bg-gray-100 w-full p-2 ">الرئيسية</li>
           </Link>
-          <Link to={"/contactUs"}>
+          <Link to={"/about-us"}>
             {" "}
             <li className="text-black bg-gray-100 w-full p-3">من نحن</li>
           </Link>
-          <Link to={"/callUs"}>
+          <Link to={"/contact-us"}>
             {" "}
             <li className="text-black bg-gray-100 w-full p-3">تواصل معنا</li>
           </Link>

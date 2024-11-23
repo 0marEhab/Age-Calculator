@@ -12,8 +12,11 @@ export default function Header({ content, toggleSidebar }) {
             </button>
             <Link to={"/en"}>AR</Link>
           </div>
-          
-          <div>حاسبة العمر</div>
+
+          <div>
+            {" "}
+            <Link to={"/"}>حاسبة العمر</Link>
+          </div>
         </div>
       </div>
     </header>

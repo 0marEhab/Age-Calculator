@@ -1,7 +1,7 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
-export default function Header({ content, toggleSidebar }) {
+export default function Header({ toggleSidebar }) {
   return (
     <header>
       <div className="bg-[#FFFFFF] h-[70px] shadow-md flex justify-center items-center shadow-slate-400">
@@ -12,7 +12,9 @@ export default function Header({ content, toggleSidebar }) {
             </button>
             <Link to={"/"}>EN</Link>
           </div>
-          <div>age calculator</div>
+          <div>
+            <Link to={"/en"}>age calculator</Link>{" "}
+          </div>
         </div>
       </div>
     </header>

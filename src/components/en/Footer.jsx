@@ -9,9 +9,10 @@ export default function Footer() {
   return (
     <div>
       <div className="flex text-black font-bold p-5 justify-center items-center gap-5">
-        <Link to={"/en"}>main page</Link>
-        <Link to={"/en/callUs"}>who are we</Link>
-        <Link to={"/en/contactUs"}>Contact Us</Link>
+        <Link to="/en/policy">privacy policy</Link>
+        <Link to="/en/terms-and-conditions">Terms and Conditions</Link>
+        <Link to={"/en/contact-us"}>Contact Us</Link>
+        <Link to={"/en/about-us"}>About Us</Link>
       </div>
       <div className="bg-[#0370A3] flex flex-col gap-5 justify-center text-white p-5 items-center">
         <p>جميع الحقوق محفوظة © حاسبة العمر 2024</p>

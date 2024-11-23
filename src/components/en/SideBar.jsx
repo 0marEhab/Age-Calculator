@@ -25,13 +25,13 @@ export default function SideBar({ isSidebarOpen, toggleSidebar }) {
           <Link to={"/en"}>
             <li className="text-black bg-gray-100 w-full p-2 ">Main Page</li>
           </Link>
-          <Link to={"/en/contactUs"}>
+          <Link to={"/en/contact-us"}>
             {" "}
-            <li className="text-black bg-gray-100 w-full p-3">Who are we </li>
+            <li className="text-black bg-gray-100 w-full p-3">contact Us </li>
           </Link>
-          <Link to={"/en/callUs"}>
+          <Link to={"/en/about-us"}>
             {" "}
-            <li className="text-black bg-gray-100 w-full p-3">Contact Us</li>
+            <li className="text-black bg-gray-100 w-full p-3">About Us</li>
           </Link>
         </ul>
       </div>
