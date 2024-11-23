@@ -152,9 +152,11 @@ export default function Calculator() {
       weekday: "long",
     });
     const result = currentAge(birthDate.toLocaleDateString("en-US"));
+    const birth = new Date(birthDate.toLocaleString("en-US"));
     setAgeData({
       ageYears: result,
       yourBirthDay: birthDate.toLocaleString("en-US", { weekday: "long" }),
+      birthDate: birth.toLocaleDateString("en-US"),
       ageDays: ageInDays,
       ageMonths: ageInMonths,
       ageWeeks: ageInWeeks,
@@ -219,11 +221,11 @@ export default function Calculator() {
     // Example usage:
 
     const result = currentAge(birthDate.toLocaleDateString("en-US"));
-
+    const birth = new Date(birthDate.toLocaleString("en-US"));
     setAgeData({
       ageYears: result,
       yourBirthDay: birthDate.toLocaleString("en-US", { weekday: "long" }),
-
+      birthDate: birth.toLocaleDateString("en-US"),
       ageDays: ageInDays,
       ageMonths: ageInMonths,
       ageWeeks: ageInWeeks,
@@ -292,7 +294,7 @@ export default function Calculator() {
             <select
               value={day}
               onChange={(e) => setDay(Number(e.target.value))}
-              className="p-2 border rounded text-gray-600 w-[300px]"
+              className="p-2 border rounded text-gray-600 md:w-[300px] w-[200px]"
             >
               {Array.from({ length: 31 }, (_, i) => i + 1).map((d) => (
                 <option key={d} value={d}>
@@ -307,7 +309,7 @@ export default function Calculator() {
             <select
               value={month}
               onChange={(e) => setMonth(Number(e.target.value))}
-              className="p-2 border rounded text-gray-600 w-[300px]"
+              className="p-2 border rounded text-gray-600 md:w-[300px] w-[200px]"
             >
               {(activeTab === "gregorian" ? greg : hijri).map((m, i) => (
                 <option key={i} value={i + 1}>
@@ -323,7 +325,7 @@ export default function Calculator() {
               <select
                 value={year}
                 onChange={(e) => setYear(Number(e.target.value))}
-                className="p-2 border rounded text-gray-600 w-[300px]"
+                className="p-2 border rounded text-gray-600 md:w-[300px] w-[200px]"
               >
                 {Array.from({ length: 101 }, (_, i) => 2024 - i).map((y) => (
                   <option key={y} value={y}>
@@ -335,7 +337,7 @@ export default function Calculator() {
               <select
                 value={year}
                 onChange={(e) => setYear(Number(e.target.value))}
-                className="p-2 border rounded text-gray-600 w-[300px]"
+                className="p-2 border rounded text-gray-600 md:w-[300px] w-[200px]"
               >
                 {Array.from({ length: 101 }, (_, i) => 1446 - i).map((y) => (
                   <option key={y} value={y}>
@@ -361,223 +363,140 @@ export default function Calculator() {
         </div>
         {/* Results */}
         {ageData && (
-          <div className="mt-10">
-            <h1 className="text-2xl bg-gray-100 p-4 border-l-2 border-[#0370A3] font-bold text-black  mb-4">
-              The Result in gregorian{" "}
-            </h1>
-            <div className="mt-8  p-6 w-full flex justify-center items-center  rounded-lg">
-              <table className=" bg-white w-full">
-                <tbody className="">
-                  <tr className="border-b">
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      Current Age:{" "}
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.ageYears}
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      the day that you were born:
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.dayYouWereBorn}
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      your age with days:
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.ageDays} day
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      your age with weeks:
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.ageWeeks} week
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      your age with monthes:{" "}
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.ageMonths} month
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      Next birthday:
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.nextBirthday}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      Days until your next birthday
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.daysToNextBirthday} day
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      the season that you were born :
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.seasonYouWereBorn}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+          <div className="mt-10 flex flex-col justify-center items-center md:justify-end md:items-end">
+            <div className="p-2 flex-col  md:w-full flex justify-center items-center rounded-lg">
+              <div className="overflow-x-auto">
+                <table className="bg-white w-[200px]">
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-sm font-medium text-gray-900">
+                        Gregorian age years
+                      </td>
+                      <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-sm text-gray-500">
+                        {ageData.ageYears}
+                      </td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-sm font-medium text-gray-900">
+                        Gregorian birthdate
+                      </td>
+                      <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-sm text-gray-500">
+                        {ageData.birthDate}
+                      </td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-sm font-medium text-gray-900">
+                        yourBirthDay
+                      </td>
+                      <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-sm text-gray-500">
+                        {ageData.yourBirthDay}
+                      </td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-sm font-medium text-gray-900">
+                        Hijri birthdate
+                      </td>
+                      <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-sm text-gray-500">
+                        {ageData.hijryBirthDay.day}-
+                        {ageData.hijryBirthDay.month}-
+                        {ageData.hijryBirthDay.year}
+                      </td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-sm font-medium text-gray-900">
+                        next birthday
+                      </td>
+                      <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-sm text-gray-500">
+                        {ageData.daysToNextBirthday} days
+                      </td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-sm font-medium text-gray-900">
+                        season you born in
+                      </td>
+                      <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-sm text-gray-500">
+                        {ageData.seasonYouWereBorn}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         )}
-        {ageData && (
-          <div className="mt-10">
-            <h1 className="text-2xl bg-gray-100 p-4 border-l-2 border-[#0370A3] font-bold text-black  mb-4">
-              The result in hijri{" "}
-            </h1>
-            <div className="mt-8  p-6 w-full flex justify-center items-center  rounded-lg">
-              <table className=" bg-white w-full">
-                <tbody className="">
-                  <tr className="border-b">
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      Your age:{" "}
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.hijryToday ? (
-                        <>
-                          {ageData.hijryToday.year - year} year -{" "}
-                          {ageData.hijryToday.month - month} month -{" "}
-                          {ageData.hijryToday.day - day} day
-                        </>
-                      ) : (
-                        <>{ageData.ageYears} </>
-                      )}
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      the day that you were born:
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.dayYouWereBorn}
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      your age with days:{" "}
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.ageDays} day
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      your age with weeks:{" "}
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.ageWeeks} week
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      your age with monthes:
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {Math.floor(((ageData.ageDays + 11) / 354.36) * 12)} month
-                    </td>
-                  </tr>
-
-                  <tr className="border-b">
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      Next birthday:
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.hijry
-                        ? ageData.hijry.day
-                        : ageData.hijryToday.date}
-                      /{ageData.hijryBirthDay.month}/
-                      {ageData.hijry
-                        ? ageData.hijry.year + 1
-                        : ageData.hijryToday.year + 1}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      Days until your next birthday:
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.daysToNextBirthday} day
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      the season that you were born :
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.seasonYouWereBorn}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
-
         {ageData && (
           <div className="mt-10 flex flex-col justify-center items-center md:justify-end md:items-end">
-            <h1 className="text-2xl w-full bg-gray-100 p-4 border-l-2 border-[#0370A3] font-bold text-black mb-4">
-              Fun facts about your life{" "}
+            <h1 className="text-2xl w-full bg-gray-100 p-4 border-r-2 border-[#0370A3] font-bold text-black text-end mb-4">
+              More facts about your life
             </h1>
-
-            <div className="  p-6 w-[400px] flex-col md:w-full flex justify-center items-center  rounded-lg">
-              <div className="">
-                <p className=" bg-blue-200 text-blue-900  rounded-md border-2 p-4  border-[#0370A3]  mb-4">
-                  The facts are calculated based on the daily averages of
-                  general activities for a healthy human body. We use
-                  well-established ratios and multiply these averages by the
-                  number of days you have lived to obtain the result.
+            <div className="p-2 flex-col md:w-full flex justify-center items-center rounded-lg">
+              <div>
+                <p
+                  dir="rtl"
+                  className="bg-blue-200 text-blue-900 rounded-md border-2 p-4 border-[#0370A3] mb-4"
+                >
+                  Note: The facts are calculated based on the average daily
+                  rates of general activities for a healthy human body. We use
+                  standard percentages and multiply these rates by the number of
+                  days you have lived to get the results.
                 </p>
               </div>
-              <table className=" bg-white w-full">
-                <tbody className="">
+              <table className="bg-white  ">
+                <tbody>
                   <tr className="border-b">
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      Time Slept
+                      You have slept:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.sleep} Around Hour
+                      {ageData.sleep} hours approximately
                     </td>
                   </tr>
                   <tr className="border-b">
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      laugh:{" "}
+                      You have laughed:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.laugh} Around Laughs
-                    </td>
-                  </tr>
-
-                  <tr className="border-b">
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      Breaths:
-                    </td>
-                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.breath} Around Breaths Taken
+                      {ageData.laugh} times approximately
                     </td>
                   </tr>
                   <tr className="border-b">
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
-                      Heart Beats:
+                      You have taken:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
-                      {ageData.heart} Around Beats
+                      {ageData.breath} breaths approximately
+                    </td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
+                      You have eaten:
+                    </td>
+                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
+                      {ageData.eat} meals approximately
+                    </td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
+                      You have drunk:
+                    </td>
+                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
+                      {ageData.water} cups of water approximately
+                    </td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
+                      You have walked:
+                    </td>
+                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
+                      {ageData.walk} steps approximately
+                    </td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs font-medium text-gray-900">
+                      Your heart has beaten:
+                    </td>
+                    <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-xs text-gray-500">
+                      {ageData.heart} beats approximately
                     </td>
                   </tr>
                 </tbody>
