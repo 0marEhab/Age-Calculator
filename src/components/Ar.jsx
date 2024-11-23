@@ -30,8 +30,8 @@ export default function Ar() {
 
       {/* Main Content */}
       <div className="font-os font-normal justify-center mx-auto w-[400px] md:w-[1220px] mt-10 text-white">
-        <About content={content} />
-        <Calculator content={toggle} />
+        <About />
+        <Calculator />
         <SocialMedia />
         <Info />
         <AgeBanner />

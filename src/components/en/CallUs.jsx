@@ -1,25 +1,21 @@
 import { useState } from "react";
-import About from "./About";
-import AgeBanner from "./AgeBanner";
 
 import Footer from "./Footer";
 import Header from "./Header";
-import Info from "./Info";
+
 
 import { ToastContainer, toast } from "react-toastify";
 import ContactAbout from "./ContactAbout";
 import SideBar from "./SideBar";
 import { Link } from "react-router-dom";
 export default function CallUs() {
-  const [content, setContent] = useState("");
+ 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
   };
-  const toggle = (t) => {
-    setContent(t);
-  };
+ 
   return (
     <div className=" bg-[#F0F2F5]  ">
       <Header toggleSidebar={toggleSidebar} />

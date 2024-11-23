@@ -12,9 +12,6 @@ export default function Header({ content, toggleSidebar }) {
             </button>
             <Link to={"/"}>EN</Link>
           </div>
-          <div>
-            Calulate age {content && "in"} {content}
-          </div>
           <div>age calculator</div>
         </div>
       </div>

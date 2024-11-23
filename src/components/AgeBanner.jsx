@@ -11,22 +11,17 @@ export default function AgeBanner() {
         <div className="space-y-4">
           <button className="w-full shadow-lg border-t-2 hover:border-[#0370A3] text-right px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 transition">
             <Link to={"/"} className="w-full flex justify-end">
-              حساب العمر بالهجري
+              حساب العمر بالميلادى و الهجري
             </Link>
           </button>
           <button className="w-full shadow-lg border-t-2 hover:border-[#0370A3] text-right px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 transition">
             <Link to={"/"} className="w-full flex justify-end">
-              حساب العمر بالميلادي
+              احسب عمرك بدقه
             </Link>
           </button>
           <button className="w-full shadow-lg border-t-2 hover:border-[#0370A3] text-right px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 transition">
-            <Link to={"/hijri"} className="w-full flex justify-end">
-              حساب العمر بالنسبة الهجرية
-            </Link>
-          </button>
-          <button className="w-full shadow-lg border-t-2 hover:border-[#0370A3] text-right px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 transition">
-            <Link to={"/gregorian"} className="w-full flex justify-end">
-              حساب العمر بالنسبة الميلادية
+            <Link to={"/en"} className="w-full flex justify-end">
+              Age calculator
             </Link>
           </button>
         </div>
