@@ -230,7 +230,7 @@ export default function Calculator() {
     const birth = new Date(birthDate.toLocaleString("en-US"));
     setAgeData({
       ageYears: result,
-      yourBirthDay: birthDate.toLocaleString("en-US", { weekday: "long" }),
+      yourBirthDay: birthDate.toLocaleString("ar-EG", { weekday: "long" }),
       birthDate: birth.toLocaleDateString("en-US"),
       ageDays: ageInDays,
       ageMonths: ageInMonths,
@@ -399,7 +399,7 @@ export default function Calculator() {
                       يوم ميلادك
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-600 border-2 text-sm text-gray-500">
-                      {ageData.yourBirthDay}
+                      {ageData.dayYouWereBorn}
                     </td>
                   </tr>
                   <tr className="border-b">
