@@ -14,9 +14,15 @@ export default function Info() {
         <div className="flex items-center gap-5 mb-4 justify-end">
           <p className="text-gray-700 ">
             The{" "}
-            <Link to={"/en"} className="text-[#0370A3]">
-              Age Calculator{" "}
-            </Link>{" "}
+            <button
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+            >
+              <Link to={"/en"} className="text-[#0370A3]">
+                Age Calculator{" "}
+              </Link>
+            </button>{" "}
             provides accurate age calculations based on either the Gregorian or
             Hijri calendar. It offers precise details such as your age in years,
             months, days, and weeks. Additionally, you can find out your
@@ -61,10 +67,16 @@ export default function Info() {
           <div className="flex items-center gap-5 mb-4 justify-end">
             <p className="text-gray-700 ">
               The{" "}
-              <Link to={"/en"} className="text-[#0370A3]">
-                {" "}
-                Gregorian age calculator{" "}
-              </Link>
+              <button
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
+              >
+                <Link to={"/en"} className="text-[#0370A3]">
+                  {" "}
+                  Gregorian age calculator{" "}
+                </Link>
+              </button>
               feature helps you easily determine your age using the Gregorian
               calendar, which consists of 365 days in a year and 366 days in a
               leap year. The process calculates the age by determining the
@@ -108,25 +120,28 @@ export default function Info() {
               Hijri calendar. Follow these steps to get your result:
               <ol className="p-5 flex flex-col gap-5">
                 <li>
-                  1. Select the calendar type: Choose the calendar you wish to
-                  use (Gregorian or Hijri).
+                  1. <strong>Select the calendar type</strong>: Choose the
+                  calendar you wish to use (Gregorian or Hijri).
                 </li>
                 <li>
-                  2. Enter Your Date of Birth: Input the day, month, and year in
-                  the respective fields.
+                  2. <strong>Enter Your Date of Birth</strong>: Input the day,
+                  month, and year in the respective fields.
                 </li>
                 <li>
-                  3. Click "Calculate Age": Press the button to process your
-                  input.
+                  3.{" "}
+                  <strong>
+                    Click "Calculate Age": Press the button to process your
+                    input.
+                  </strong>
                 </li>
                 <li>
-                  4. Wait for the result: The result will display your age in
-                  both the Gregorian and Hijri calendars, along with additional
-                  details such as your day of birth and the time remaining until
-                  your next birthday. The tool also provides fun, estimated
-                  facts about your life, like the number of cups of water you’ve
-                  likely consumed or steps you’ve taken—adding an engaging and
-                  informative touch.
+                  4. <strong>Wait for the result</strong>: The result will
+                  display your age in both the Gregorian and Hijri calendars,
+                  along with additional details such as your day of birth and
+                  the time remaining until your next birthday. The tool also
+                  provides fun, estimated facts about your life, like the number
+                  of cups of water you’ve likely consumed or steps you’ve
+                  taken—adding an engaging and informative touch.
                 </li>
               </ol>
             </p>
@@ -143,9 +158,15 @@ export default function Info() {
               Sometimes, people need to convert their age between the Gregorian
               and Hijri calendars for personal or legal purposes. With the Age
               Calculator, you can easily{" "}
-              <Link to={"/en"} className="text-[#0370A3]">
-                convert your age
-              </Link>{" "}
+              <button
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
+              >
+                <Link to={"/en"} className="text-[#0370A3]">
+                  convert your age
+                </Link>
+              </button>{" "}
               from Gregorian to Hijri or vice versa.
               <br />
               <br />

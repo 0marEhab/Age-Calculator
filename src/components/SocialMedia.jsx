@@ -1,7 +1,7 @@
 import React from "react";
 import { RiWhatsappFill } from "react-icons/ri";
 import { FaLinkedinIn } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { Link } from "react-router-dom";
 export default function SocialMedia() {
@@ -16,7 +16,7 @@ export default function SocialMedia() {
           <FaLinkedinIn size={30} className=" text-blue-600" />
         </Link>
         <Link className=" px-3 py-3  rounded-md bg-[#F0F2F5] ">
-          <FaTwitter size={30} className=" text-blue-400" />
+          <FaSquareXTwitter size={30} className=" text-gray-900" />
         </Link>
         <Link className=" px-3 py-3  rounded-md bg-[#F0F2F5] ">
           <FaFacebookF size={30} className=" text-blue-700" />
