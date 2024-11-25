@@ -167,12 +167,14 @@ export default function Calculator() {
       hijryBirthDay: hijriBirthDate,
       dayYouWereBorn: birthDate.toLocaleString("en-US", { weekday: "long" }),
       seasonYouWereBorn: birthSeason, // Add season info
-
+      water: ageInDays * 15.5,
       sleep: ageInDays * 8,
       laugh: ageInDays * 15,
-
+      talk: ageInDays * 7000,
+      walk: ageInDays * 10000,
       breath: ageInDays * 25000,
       heart: ageInDays * 115200,
+      eat: ageInDays * 3,
     });
   };
 
