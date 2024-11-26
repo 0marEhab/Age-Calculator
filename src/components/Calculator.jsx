@@ -155,11 +155,16 @@ export default function Calculator() {
       weekday: "long",
     });
     const result = currentAge(birthDate.toLocaleDateString("en-US"));
-    const birth = new Date(birthDate.toLocaleString("en-US"));
+    const birth = new Date(birthDate); // Example date
+    const birthDate1 = birth.toLocaleDateString("en-CA", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
     setAgeData({
       ageYears: result,
       yourBirthDay: birthDate.toLocaleString("ar-EG", { weekday: "long" }),
-      birthDate: birth.toLocaleDateString("en-US"),
+      birthDate: birth.toLocaleDateString("en-CA"),
       ageDays: ageInDays,
       ageMonths: ageInMonths,
       ageWeeks: ageInWeeks,
@@ -359,7 +364,7 @@ export default function Calculator() {
                 onChange={(e) => setYear(Number(e.target.value))}
                 className="p-2 border rounded text-gray-600 md:w-[300px] w-[200px]"
               >
-                {Array.from({ length: 101 }, (_, i) => 1446 - i).map((y) => (
+                {Array.from({ length: 91 }, (_, i) => 1446 - i).map((y) => (
                   <option key={y} value={y}>
                     {y}
                   </option>

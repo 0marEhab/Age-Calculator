@@ -12,7 +12,6 @@ export default function CallUs() {
     setIsSidebarOpen((prev) => !prev);
   };
 
-  // Scroll to the top of the page when the location changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

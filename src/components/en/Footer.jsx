@@ -16,18 +16,19 @@ export default function Footer() {
       </div>
       <div className="bg-[#0370A3] flex flex-col gap-5 justify-center text-white p-5 items-center">
         <p>
-          جميع الحقوق محفوظة ©{" "}
+          All rights reserved ©{" "}
           <button
             onClick={() => {
               window.scrollTo(0, 0);
             }}
           >
             <Link to={"/en"} className="font-bold">
-              حاسبة العمر
+              Age Calculator
             </Link>
           </button>{" "}
           2024
         </p>
+
         <div className="flex gap-5">
           <RiWhatsappFill size={30} />
           <FaLinkedinIn size={30} />

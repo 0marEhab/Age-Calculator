@@ -117,7 +117,7 @@ export default function Calculator() {
 
     // Check if the birthDate is in the future
     if (birthDate > today) {
-      toast.error("Cannot calculate the future date!");
+      toast.error("Cannot calculate the future date!.");
       return;
     }
 
@@ -148,25 +148,31 @@ export default function Calculator() {
     const daysUntilNextBirthday = Math.floor(
       (nextBirthday - today) / (1000 * 60 * 60 * 24)
     );
-    const weekDayNextBirthday = nextBirthday.toLocaleString("en-US", {
+    const weekDayNextBirthday = nextBirthday.toLocaleString("ar-EG", {
       weekday: "long",
     });
     const result = currentAge(birthDate.toLocaleDateString("en-US"));
-    const birth = new Date(birthDate.toLocaleString("en-US"));
+    const birth = new Date(birthDate); // Example date
+    const birthDate1 = birth.toLocaleDateString("en-CA", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
     setAgeData({
       ageYears: result,
       yourBirthDay: birthDate.toLocaleString("en-US", { weekday: "long" }),
-      birthDate: birth.toLocaleDateString("en-US"),
+      birthDate: birth.toLocaleDateString("en-CA"),
       ageDays: ageInDays,
       ageMonths: ageInMonths,
       ageWeeks: ageInWeeks,
-      nextBirthday: nextBirthday.toLocaleDateString("en-US"),
+      nextBirthday: nextBirthday.toLocaleDateString("ar-EG"),
       weekDayNextBirthday: weekDayNextBirthday,
-      daysToNextBirthday: daysUntilNextBirthday,
+      daysToNextBirthday: daysUntilNextBirthday + 1,
       hijryToday: hijryToday,
       hijryBirthDay: hijriBirthDate,
-      dayYouWereBorn: birthDate.toLocaleString("en-US", { weekday: "long" }),
-      seasonYouWereBorn: birthSeason, // Add season info
+      dayYouWereBorn: birthDate.toLocaleString("ar-EG", { weekday: "long" }),
+      seasonYouWereBorn: birthSeason,
+
       water: ageInDays * 15.5,
       sleep: ageInDays * 8,
       laugh: ageInDays * 15,
@@ -186,7 +192,7 @@ export default function Calculator() {
 
     // Check if the birthDate is in the future
     if (birthDate > today) {
-      toast.error("Cannot calculate the future date!");
+      toast.error("Cannot calculate the future date!.");
       return;
     }
 
@@ -223,11 +229,18 @@ export default function Calculator() {
     // Example usage:
 
     const result = currentAge(birthDate.toLocaleDateString("en-US"));
-    const birth = new Date(birthDate.toLocaleString("en-US"));
+    const birth = new Date(birthDate); // Example date
+    const birthDate1 = birth.toLocaleDateString("en-CA", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+    console.log(birthDate1); // Outputs: "01/02/2024" (day/month/year)
+
     setAgeData({
       ageYears: result,
-      yourBirthDay: birthDate.toLocaleString("en-US", { weekday: "long" }),
-      birthDate: birth.toLocaleDateString("en-US"),
+      yourBirthDay: birthDate.toLocaleString("en-Us", { weekday: "long" }),
+      birthDate: birthDate1,
       ageDays: ageInDays,
       ageMonths: ageInMonths,
       ageWeeks: ageInWeeks,
@@ -236,7 +249,7 @@ export default function Calculator() {
       daysToNextBirthday: daysUntilNextBirthday,
       hijry: hijry,
       hijryBirthDay: hijryBirthDay,
-      dayYouWereBorn: birthDate.toLocaleString("en-US", { weekday: "long" }),
+      dayYouWereBorn: birthDate.toLocaleString("ar-EG", { weekday: "long" }),
       seasonYouWereBorn: birthSeason, // Add season info
       water: ageInDays * 15.5,
       sleep: ageInDays * 8,
@@ -403,8 +416,9 @@ export default function Calculator() {
                         Hijri birthdate
                       </td>
                       <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-400 border-2 text-sm text-gray-900">
-                        {ageData.hijryBirthDay.month}-
-                        {ageData.hijryBirthDay.day}-{ageData.hijryBirthDay.year}
+                        {ageData.hijryBirthDay.year}/
+                        {ageData.hijryBirthDay.month}/
+                        {ageData.hijryBirthDay.day}
                       </td>
                     </tr>
                     <tr className="border-b">

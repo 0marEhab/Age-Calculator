@@ -22,7 +22,7 @@ export default function AboutUsEn() {
         <div className="bg-white p-10 mt-10 rounded-lg flex flex-col gap-4 text-black font-os">
           <p>
             The{" "}
-            <Link to={"/"} className="text-[#0370A3]">
+            <Link to={"/en"} className="text-[#0370A3]">
               Age Calculator
             </Link>{" "}
             website is an online platform that provides a tool for accurately
