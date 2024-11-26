@@ -153,15 +153,16 @@ export default function Calculator() {
     });
     const result = currentAge(birthDate.toLocaleDateString("en-US"));
     const birth = new Date(birthDate); // Example date
-    const birthDate1 = birth.toLocaleDateString("en-CA", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    });
+    const birthDate1 = `${birth.getDate().toString().padStart(2, "0")}-${(
+      birth.getMonth() + 1
+    )
+      .toString()
+      .padStart(2, "0")}-${birth.getFullYear()}`;
+
     setAgeData({
       ageYears: result,
       yourBirthDay: birthDate.toLocaleString("en-US", { weekday: "long" }),
-      birthDate: birth.toLocaleDateString("en-CA"),
+      birthDate: birthDate1,
       ageDays: ageInDays,
       ageMonths: ageInMonths,
       ageWeeks: ageInWeeks,
@@ -230,11 +231,12 @@ export default function Calculator() {
 
     const result = currentAge(birthDate.toLocaleDateString("en-US"));
     const birth = new Date(birthDate); // Example date
-    const birthDate1 = birth.toLocaleDateString("en-CA", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    });
+    const birthDate1 = `${birth.getDate().toString().padStart(2, "0")}-${(
+      birth.getMonth() + 1
+    )
+      .toString()
+      .padStart(2, "0")}-${birth.getFullYear()}`;
+
     console.log(birthDate1); // Outputs: "01/02/2024" (day/month/year)
 
     setAgeData({
@@ -416,9 +418,9 @@ export default function Calculator() {
                         Hijri birthdate
                       </td>
                       <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-400 border-2 text-sm text-gray-900">
-                        {ageData.hijryBirthDay.year}/
-                        {ageData.hijryBirthDay.month}/
-                        {ageData.hijryBirthDay.day}
+                        {ageData.hijryBirthDay.day}-
+                        {ageData.hijryBirthDay.month}-
+                        {ageData.hijryBirthDay.year}
                       </td>
                     </tr>
                     <tr className="border-b">
@@ -488,7 +490,7 @@ export default function Calculator() {
                       You have slept:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-400 border-2 text-xs text-gray-900">
-                      Around {ageData.sleep} hours approximately
+                      Around {ageData.sleep} hours
                     </td>
                   </tr>
                   <tr className="border-b">
@@ -496,7 +498,7 @@ export default function Calculator() {
                       You have laughed:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-400 border-2 text-xs text-gray-900">
-                      Around {ageData.laugh} times approximately
+                      Around {ageData.laugh} times
                     </td>
                   </tr>
                   <tr className="border-b">
@@ -504,7 +506,7 @@ export default function Calculator() {
                       You have taken:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-400 border-2 text-xs text-gray-900">
-                      Around {ageData.breath} breaths approximately
+                      Around {ageData.breath} breaths
                     </td>
                   </tr>
                   <tr className="border-b">
@@ -512,7 +514,7 @@ export default function Calculator() {
                       You have eaten:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-400 border-2 text-xs text-gray-900">
-                      Around {ageData.eat} meals approximately
+                      Around {ageData.eat} meals
                     </td>
                   </tr>
                   <tr className="border-b">
@@ -520,7 +522,7 @@ export default function Calculator() {
                       You have drunk:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-400 border-2 text-xs text-gray-900">
-                      Around {ageData.water} cups of water approximately
+                      Around {ageData.water} cups of water
                     </td>
                   </tr>
                   <tr className="border-b">
@@ -528,7 +530,7 @@ export default function Calculator() {
                       You have walked:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-400 border-2 text-xs text-gray-900">
-                      Around {ageData.walk} steps approximately
+                      Around {ageData.walk} steps
                     </td>
                   </tr>
                   <tr className="border-b">
@@ -536,7 +538,7 @@ export default function Calculator() {
                       Your heart has beaten:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-400 border-2 text-xs text-gray-900">
-                      Around {ageData.heart} beats approximately
+                      Around {ageData.heart} beats
                     </td>
                   </tr>
                 </tbody>
