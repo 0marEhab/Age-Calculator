@@ -488,7 +488,7 @@ export default function Calculator() {
                       You have slept:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-400 border-2 text-xs text-gray-900">
-                      {ageData.sleep} hours approximately
+                      Around {ageData.sleep} hours approximately
                     </td>
                   </tr>
                   <tr className="border-b">
@@ -496,7 +496,7 @@ export default function Calculator() {
                       You have laughed:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-400 border-2 text-xs text-gray-900">
-                      {ageData.laugh} times approximately
+                      Around {ageData.laugh} times approximately
                     </td>
                   </tr>
                   <tr className="border-b">
@@ -504,7 +504,7 @@ export default function Calculator() {
                       You have taken:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-400 border-2 text-xs text-gray-900">
-                      {ageData.breath} breaths approximately
+                      Around {ageData.breath} breaths approximately
                     </td>
                   </tr>
                   <tr className="border-b">
@@ -512,7 +512,7 @@ export default function Calculator() {
                       You have eaten:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-400 border-2 text-xs text-gray-900">
-                      {ageData.eat} meals approximately
+                      Around {ageData.eat} meals approximately
                     </td>
                   </tr>
                   <tr className="border-b">
@@ -520,7 +520,7 @@ export default function Calculator() {
                       You have drunk:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-400 border-2 text-xs text-gray-900">
-                      {ageData.water} cups of water approximately
+                      Around {ageData.water} cups of water approximately
                     </td>
                   </tr>
                   <tr className="border-b">
@@ -528,7 +528,7 @@ export default function Calculator() {
                       You have walked:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-400 border-2 text-xs text-gray-900">
-                      {ageData.walk} steps approximately
+                      Around {ageData.walk} steps approximately
                     </td>
                   </tr>
                   <tr className="border-b">
@@ -536,7 +536,7 @@ export default function Calculator() {
                       Your heart has beaten:
                     </td>
                     <td className="px-1 md:px-6 md:text-start text-center py-4 whitespace-nowrap w-1/2 border-gray-400 border-2 text-xs text-gray-900">
-                      {ageData.heart} beats approximately
+                      Around {ageData.heart} beats approximately
                     </td>
                   </tr>
                 </tbody>
