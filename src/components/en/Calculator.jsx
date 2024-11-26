@@ -358,7 +358,7 @@ export default function Calculator() {
                 onChange={(e) => setYear(Number(e.target.value))}
                 className="p-2 border rounded text-gray-600 md:w-[300px] w-[200px]"
               >
-                {Array.from({ length: 101 }, (_, i) => 1446 - i).map((y) => (
+                {Array.from({ length: 91 }, (_, i) => 1446 - i).map((y) => (
                   <option key={y} value={y}>
                     {y}
                   </option>
